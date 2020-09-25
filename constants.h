@@ -223,13 +223,13 @@ void sprite_create(unsigned char imageData[], int x, int y, GsSPRITE **sprite) {
 
 	// Initialize sprite (see GSSprite at PSYQ/DOCS/LIBREF.PDF)
 	*sprite = malloc3(sizeof(GsSPRITE));
-	(*sprite) -> attribute = 0x0000000;
+	(*sprite) -> attribute = tim_data->pmode << 24;
 	(*sprite) -> x = x;
 	(*sprite) -> y = y;
 	(*sprite) -> w = tim_data->pw * 4;
 	(*sprite) -> h = tim_data->ph;
 	(*sprite) -> tpage = GetTPage(
-			0, 		 // 0=4-bit, 1=8-bit, 2=16-bit
+			tim_data->pmode, 		 // 0=4-bit, 1=8-bit, 2=16-bit
 			1,       // semitransparency rate
 			rect->x, // framebuffer x position of image
 			rect->y  // framebuffer y position of image
