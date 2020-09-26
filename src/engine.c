@@ -155,7 +155,7 @@ void sprite_create(unsigned char imageData[], int x, int y, GsSPRITE **sprite) {
     (*sprite) -> attribute = tim_data->pmode << 24;
     (*sprite) -> x = x;
     (*sprite) -> y = y;
-    (*sprite) -> w = tim_data->pw * 4;
+    (*sprite) -> w = tim_data->pw ;
     (*sprite) -> h = tim_data->ph;
     (*sprite) -> tpage = GetTPage(
             tim_data->pmode, 		 // 0=4-bit, 1=8-bit, 2=16-bit
@@ -314,7 +314,7 @@ void set_background_color(Color *color) {
 
 void initialize_heap() {
     printf("\nReserving 1024KB (1,048,576 Bytes) RAM... \n");
-    InitHeap3((void*)0x800F8000, 0x00100000);
+    InitHeap3((void*)0x800F8000, 0x00200000);
     printf("Success!\n");
 }
 
