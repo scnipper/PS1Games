@@ -37,19 +37,10 @@ int	SysPad, SysPadT;
 #define Pad2Start		_PAD(1, PADstart)
 #define Pad2Select		_PAD(1, PADselect)
 
-void initialize_pad() {
-	PadInit(0);
-}
+void initialize_pad();
 
-void pad_reset(void) {
-	SysPad = 0;
-	SysPadT = 0;
-}
+void pad_reset(void);
 
-void pad_update(void){
-	int	pad = PadRead(0);
-	SysPadT = pad & (pad ^ SysPad);
-	SysPad = pad;
-}
+void pad_update(void);
 
 #endif

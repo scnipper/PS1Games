@@ -1,11 +1,8 @@
 #include "screen_selector.h"
+#include "controller.h"
 
-void initialize();
-void update();
-void draw();
-void initLogo();
-void updateLogo();
-void drawLogo();
+
+
 
 Color* color;
 Color* blend_color;
@@ -20,16 +17,7 @@ enum State {
     LOGO,SELECT_SCREEN
 } mainState;
 
-int main() {
-    mainState = LOGO;
-    initialize();
-    while(1) {
-        update();
-        clear_display();
-        draw();
-        display();
-    }
-}
+
 
 void initialize() {
     initialize_heap();
@@ -57,7 +45,30 @@ void initialize() {
 
 
 }
+void updateLogo() {
+    sprite_set_blend_rgb(logoSprite,logoBlend,logoBlend,logoBlend);
+    if(!isLogoShow) {
+        if(logoBlend < 128)
+            logoBlend++;
+        else {
+            tick++;
+            if(tick >= 10) {
+                isLogoShow = 1;
+            }
+        }
+    }
 
+    if(isLogoShow) {
+        logoBlend--;
+        if(logoBlend <= 0) {
+            logoBlend = 0;
+            free3(logoSprite);
+            clear_vram();
+            initScreenSelector();
+            mainState = SELECT_SCREEN;
+        }
+    }
+}
 void update() {
 
     /*pad_update();
@@ -83,7 +94,9 @@ void update() {
 
 
 }
-
+void drawLogo() {
+    draw_sprite(logoSprite);
+}
 void draw() {
     switch (mainState) {
         case LOGO:
@@ -97,32 +110,19 @@ void draw() {
 
 
 
-void drawLogo() {
-    draw_sprite(logoSprite);
-}
 
 
 
-void updateLogo() {
-    sprite_set_blend_rgb(logoSprite,logoBlend,logoBlend,logoBlend);
-    if(!isLogoShow) {
-        if(logoBlend < 128)
-            logoBlend++;
-        else {
-            tick++;
-            if(tick >= 30) {
-                isLogoShow = 1;
-            }
-        }
-    }
 
-    if(isLogoShow) {
-        logoBlend--;
-        if(logoBlend <= 0) {
-            logoBlend = 0;
-            free3(logoSprite);
-            initScreenSelector();
-            mainState = SELECT_SCREEN;
-        }
+
+
+int main() {
+    mainState = LOGO;
+    initialize();
+    while(1) {
+        update();
+        clear_display();
+        draw();
+        display();
     }
 }

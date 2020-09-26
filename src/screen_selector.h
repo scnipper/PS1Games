@@ -5,16 +5,9 @@
 Color* selectedScreenBg;
 
 
-void initScreenSelector() {
-    color_create(0,50,255,&selectedScreenBg);
-    set_background_color(selectedScreenBg);
-}
+void initScreenSelector();
 
-void drawScreenSelector() {
+void drawScreenSelector();
 
-}
-
-void updateScreenSelector() {
-
-}
+void updateScreenSelector();
 #endif //SIMPLE_PS1_GAMES_SCREEN_SELECTOR_H
