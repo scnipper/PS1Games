@@ -1,29 +1,22 @@
+#include "core.h"
 #include "screen_selector.h"
 #include "controller.h"
 
 
-
-
-Color* color;
-Color* blend_color;
-u_long* data[1];
-Sprite* logoSprite;
+Color *color;
+Color *blend_color;
+u_long *data[1];
+Sprite *logoSprite;
 
 u_long tick = 0;
 int logoBlend = 0;
 int isLogoShow;
 
-enum State {
-    LOGO,SELECT_SCREEN
-} mainState;
 
-
-
-void initialize() {
-    initialize_heap();
-    initialize_screen();
-    initialize_pad();
-
+void initLogo() {
+    isLogoShow = 0;
+    logoBlend = 0;
+    tick = 0;
     color_create(0, 0, 0, &color);
     set_background_color(color);
     cd_open();
@@ -34,41 +27,48 @@ void initialize() {
     audio_transfer_vag_to_spu((u_char *)data[0], SECTOR * 21, SPU_00CH);
     audio_play(SPU_00CH);*/
 
-    sprite_create((u_char *)data[0], 160, 128, &logoSprite);
-    sprite_set_middle(logoSprite,63,40);
+    sprite_create((u_char *) data[0], 160, 128, &logoSprite);
+    sprite_set_middle(logoSprite, 63, 40);
 
 
     // free3(data[0]);
+}
 
 
+void initialize() {
+    initialize_heap();
+    initialize_screen();
+    initialize_pad();
 
+    initLogo();
 
 
 }
+
 void updateLogo() {
-    sprite_set_blend_rgb(logoSprite,logoBlend,logoBlend,logoBlend);
-    if(!isLogoShow) {
-        if(logoBlend < 128)
+    sprite_set_blend_rgb(logoSprite, logoBlend, logoBlend, logoBlend);
+    if (!isLogoShow) {
+        if (logoBlend < 128)
             logoBlend++;
         else {
             tick++;
-            if(tick >= 10) {
+            if (tick >= 10) {
                 isLogoShow = 1;
             }
         }
     }
 
-    if(isLogoShow) {
+    if (isLogoShow) {
         logoBlend--;
-        if(logoBlend <= 0) {
+        if (logoBlend <= 0) {
             logoBlend = 0;
             free3(logoSprite);
             clear_vram();
-            initScreenSelector();
-            mainState = SELECT_SCREEN;
+            setState(SELECT_SCREEN);
         }
     }
 }
+
 void update() {
 
     /*pad_update();
@@ -90,13 +90,12 @@ void update() {
     }
 
 
-
-
-
 }
+
 void drawLogo() {
     draw_sprite(logoSprite);
 }
+
 void draw() {
     switch (mainState) {
         case LOGO:
@@ -109,17 +108,13 @@ void draw() {
 }
 
 
-
-
-
-
-
-
-
 int main() {
     mainState = LOGO;
+    initFuncs[LOGO] = initLogo;
+    initFuncs[SELECT_SCREEN] = initScreenSelector;
+
     initialize();
-    while(1) {
+    while (1) {
         update();
         clear_display();
         draw();

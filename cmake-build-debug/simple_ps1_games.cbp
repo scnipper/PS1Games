@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="simple_ps1_games"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/psyq/projects/simple_ps1_games/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simple_ps1_games">
+				<Option output="C:/psyq/projects/simple_ps1_games/cmake-build-debug/simple_ps1_games.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/psyq/projects/simple_ps1_games/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/psyq/projects/simple_ps1_games/src"/>
+					<Add directory="C:/psyq/projects/simple_ps1_games/src/games"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 simple_ps1_games"/>
+					<CompileFile command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simple_ps1_games/fast">
+				<Option output="C:/psyq/projects/simple_ps1_games/cmake-build-debug/simple_ps1_games.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/psyq/projects/simple_ps1_games/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/psyq/projects/simple_ps1_games/src"/>
+					<Add directory="C:/psyq/projects/simple_ps1_games/src/games"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 simple_ps1_games/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/psyq/projects/simple_ps1_games/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/psyq/projects/simple_ps1_games/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\psyq\projects\simple_ps1_games\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/controller.c">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/controller.h">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/core.c">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/core.h">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/engine.c">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/engine.h">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/games/tic_tac_toe_game.c">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/games/tic_tac_toe_game.h">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/main.c">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/screen_selector.c">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/screen_selector.h">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
