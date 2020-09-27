@@ -7,6 +7,9 @@
 			<file name="SYSTEM.CNF"	type="data"	source="SYSTEM.CNF"/>
 			<file name="SPLASH.TIM"	type="data"	source="../data/SPLASH.TIM"/>
 			<file name="FIELD.TIM"	type="data"	source="../data/TIC_TAC/FIELD.TIM"/>
+			<file name="CROSS.TIM"	type="data"	source="../data/TIC_TAC/CROSS.TIM"/>
+			<file name="CIRCLE.TIM"	type="data"	source="../data/TIC_TAC/CIRCLE.TIM"/>
+			<file name="LINE.TIM"	type="data"	source="../data/TIC_TAC/LINE.TIM"/>
 			<file name="SELECTED.TIM"	type="data"	source="../data/TIC_TAC/SELECTED.TIM"/>
 			<file name="MAIN.EXE"	type="data"	source="MAIN.EXE"/>
 			<!-- Add your own files or folders here -->
