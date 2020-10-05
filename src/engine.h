@@ -31,7 +31,7 @@ unsigned long __stacksize; // 16 Kilobytes of Stack
 
 #define SECTOR 2048
 #define OT_LENGTH 1
-#define PACKETMAX 300
+#define PACKETMAX 600
 #define TYPE_LINE 0
 #define TYPE_BOX 1
 #define SCREEN_MODE_PAL 0
