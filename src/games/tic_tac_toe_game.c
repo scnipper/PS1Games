@@ -96,34 +96,76 @@ void updateTicTac() {
                 Cursor.y = 0;
             }
         }
+
+        if(pad_check(Pad1Cross)) {
+            isLockUpdate = 10;
+
+            setField(CROSS);
+
+        }
+        if(pad_check(Pad1Circle)) {
+            isLockUpdate = 10;
+            setField(CIRCLE);
+
+        }
     }
 
-    if(pad_check(Pad1Cross)) {
-        if(currentFigureTicTac == CROSS) {
-            fieldInfo[Cursor.x][Cursor.y] = CROSS;
-        } else if( currentFigureTicTac == -1) {
-            currentFigureTicTac = CROSS;
-        }
-    }
-    if(pad_check(Pad1Circle)) {
-        if(currentFigureTicTac == CIRCLE) {
-            fieldInfo[Cursor.x][Cursor.y] = CIRCLE;
-        } else if( currentFigureTicTac == -1) {
-            currentFigureTicTac = CIRCLE;
-        }
-    }
+
     if(isLockUpdate > 0) {
         isLockUpdate--;
     }
 
     sprite_set_position(selectedSprite,85 + Cursor.x * 85,7 + Cursor.y *85);
 }
+
+void setField(int typeFigure) {
+    if( currentFigureTicTac == -1) {
+        currentFigureTicTac = typeFigure;
+    }
+    if(currentFigureTicTac == typeFigure && fieldInfo[Cursor.x][Cursor.y] == 0) {
+        fieldInfo[Cursor.x][Cursor.y] = typeFigure;
+        addToRandomEmptyPlace();
+    }
+
+}
+
+void addToRandomEmptyPlace() {
+    if(countEmptySlot() > 0) {
+
+        int randx = 0;
+        int randy = 0;
+        srand(GsGetVcount());
+
+        do {
+            randx = rand() % 3;
+            randy = rand() % 3;
+        } while (fieldInfo[randx][randy] > 0);
+
+
+        fieldInfo[randx][randy] = currentFigureTicTac == CROSS ? CIRCLE : CROSS;
+    }
+
+
+}
+
+int countEmptySlot() {
+    int count = 0;
+    for (indexI = 0; indexI < 3; ++indexI) {
+        for (indexJ = 0; indexJ < 3; ++indexJ) {
+            if(fieldInfo[indexI][indexJ] == 0) count++;
+        }
+    }
+
+    return count;
+}
+
 void initTicTac() {
 
 
     Color *bg;
     color_create(0, 140, 255, &bg);
     set_background_color(bg);
+
 
     currentFigureTicTac = -1;
 

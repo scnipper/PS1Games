@@ -3,6 +3,7 @@
 #define SIMPLE_PS1_GAMES_TIC_TAC_TOE_GAME_H
 #include "../engine.h"
 #include "../controller.h"
+#include <rand.h>
 
 #define CROSS 1
 #define CIRCLE 2
@@ -37,5 +38,9 @@ void updateTicTac();
 void initTicTac();
 void drawTicTacField();
 void drawScoreTicTac();
+void setField(int typeFigure);
+int countEmptySlot();
+
+void addToRandomEmptyPlace();
 
 #endif //SIMPLE_PS1_GAMES_TIC_TAC_TOE_GAME_H
