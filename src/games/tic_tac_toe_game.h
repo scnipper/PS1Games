@@ -30,7 +30,7 @@ int scoreCross;
 
 int fontCircleId;
 int fontCrossId;
-int tick_tac;
+int currentFigureTicTac;
 
 void drawTicTac();
 void updateTicTac();

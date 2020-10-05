@@ -99,10 +99,18 @@ void updateTicTac() {
     }
 
     if(pad_check(Pad1Cross)) {
-        fieldInfo[Cursor.x][Cursor.y] = CROSS;
+        if(currentFigureTicTac == CROSS) {
+            fieldInfo[Cursor.x][Cursor.y] = CROSS;
+        } else if( currentFigureTicTac == -1) {
+            currentFigureTicTac = CROSS;
+        }
     }
     if(pad_check(Pad1Circle)) {
-        fieldInfo[Cursor.x][Cursor.y] = CIRCLE;
+        if(currentFigureTicTac == CIRCLE) {
+            fieldInfo[Cursor.x][Cursor.y] = CIRCLE;
+        } else if( currentFigureTicTac == -1) {
+            currentFigureTicTac = CIRCLE;
+        }
     }
     if(isLockUpdate > 0) {
         isLockUpdate--;
@@ -116,6 +124,8 @@ void initTicTac() {
     Color *bg;
     color_create(0, 140, 255, &bg);
     set_background_color(bg);
+
+    currentFigureTicTac = -1;
 
     scoreCircle = 0;
     scoreCross = 0;
