@@ -118,6 +118,100 @@ void updateTicTac() {
     sprite_set_position(selectedSprite,85 + Cursor.x * 85,7 + Cursor.y *85);
 }
 
+void clearField() {
+    for (indexI = 0; indexI < SIZE_FIELD; ++indexI) {
+        for (indexJ = 0; indexJ < SIZE_FIELD; ++indexJ) {
+            fieldInfo[indexI][indexJ]=0;
+        }
+    }
+}
+void winGame(int typeFigure) {
+    if(typeFigure == CROSS) {
+        scoreCross++;
+    }
+    if(typeFigure == CIRCLE) {
+        scoreCircle++;
+    }
+    clearField();
+
+}
+/*
+ * Checked when win circles or crosses
+ */
+void checkWinCombination() {
+    // check lines vertical
+    for (indexI = 0; indexI < SIZE_FIELD; ++indexI) {
+        int checkedFigure = fieldInfo[indexI][0];
+        if(checkedFigure > 0) {
+            int isWin = 1;
+            for (indexJ = 1; indexJ < SIZE_FIELD; ++indexJ) {
+                if(checkedFigure != fieldInfo[indexI][indexJ]) {
+                    isWin = 0;
+                    break;
+                }
+            }
+            if(isWin) {
+                winGame(checkedFigure);
+            }
+        }
+    }
+    // check lines horizontal
+    for (indexI = 0; indexI < SIZE_FIELD; ++indexI) {
+        int checkedFigure = fieldInfo[0][indexI];
+        if(checkedFigure > 0) {
+            int isWin = 1;
+            for (indexJ = 1; indexJ < SIZE_FIELD; ++indexJ) {
+                if(checkedFigure != fieldInfo[indexJ][indexI]) {
+                    isWin = 0;
+                    break;
+                }
+            }
+            if(isWin) {
+                winGame(checkedFigure);
+            }
+        }
+    }
+    // check lines diagonal 1
+
+    {
+        int checkedFigure = fieldInfo[0][0];
+        if(checkedFigure > 0) {
+            int isWin = 1;
+            for (indexJ = 1; indexJ < SIZE_FIELD; ++indexJ) {
+                if(checkedFigure != fieldInfo[indexJ][indexJ]) {
+                    isWin = 0;
+                    break;
+                }
+            }
+            if(isWin) {
+                winGame(checkedFigure);
+            }
+        }
+    }
+    // check lines diagonal 2
+    {
+        int maxRight = SIZE_FIELD-1;
+        int checkedFigure = fieldInfo[maxRight][0];
+        if(checkedFigure > 0) {
+            int isWin = 1;
+            for (indexJ = 1; indexJ < SIZE_FIELD; ++indexJ) {
+                maxRight--;
+
+                if(checkedFigure != fieldInfo[maxRight][indexJ]) {
+                    isWin = 0;
+                    break;
+                }
+            }
+            if(isWin) {
+                winGame(checkedFigure);
+            }
+        }
+    }
+}
+
+/*
+ * Place figure on field
+ */
 void setField(int typeFigure) {
     if( currentFigureTicTac == -1) {
         currentFigureTicTac = typeFigure;
@@ -125,10 +219,13 @@ void setField(int typeFigure) {
     if(currentFigureTicTac == typeFigure && fieldInfo[Cursor.x][Cursor.y] == 0) {
         fieldInfo[Cursor.x][Cursor.y] = typeFigure;
         addToRandomEmptyPlace();
+        checkWinCombination();
     }
 
 }
-
+/*
+ * Count empty slots
+ */
 void addToRandomEmptyPlace() {
     if(countEmptySlot() > 0) {
 
@@ -143,6 +240,8 @@ void addToRandomEmptyPlace() {
 
 
         fieldInfo[randx][randy] = currentFigureTicTac == CROSS ? CIRCLE : CROSS;
+    } else {
+        clearField();
     }
 
 

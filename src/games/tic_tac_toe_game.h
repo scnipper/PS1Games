@@ -7,6 +7,7 @@
 
 #define CROSS 1
 #define CIRCLE 2
+#define SIZE_FIELD 3
 
 
 Sprite *fieldSprite;
@@ -21,9 +22,9 @@ struct Point {
     int x;
     int y;
 } Cursor;
-struct Point pos[3][3];
-
-int fieldInfo[3][3];
+struct Point pos[SIZE_FIELD][SIZE_FIELD];
+// field with cross and circles
+int fieldInfo[SIZE_FIELD][SIZE_FIELD];
 int isLockUpdate;
 
 int scoreCircle;
@@ -38,6 +39,9 @@ void updateTicTac();
 void initTicTac();
 void drawTicTacField();
 void drawScoreTicTac();
+void clearField();
+void winGame(int typeFigure);
+void checkWinCombination();
 void setField(int typeFigure);
 int countEmptySlot();
 
