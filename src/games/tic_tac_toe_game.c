@@ -3,16 +3,62 @@
 
 void drawTicTac() {
 
-        draw_sprite(selectedSprite);
+    drawLine();
+    draw_sprite(selectedSprite);
 
 
-
-        draw_sprite(fieldSprite);
-        drawTicTacField();
-        drawScoreTicTac();
+    draw_sprite(fieldSprite);
+    drawTicTacField();
+    drawScoreTicTac();
 
 }
+/*
+ * Line when win game
+ */
+void drawLine() {
+    if(isLineNum) {
+        switch (lineType) {
 
+            case VERTICAL:
+                lineSprite->rotate = 0;
+                lineSprite->scaley = ONE;
+
+                if(isLineNum == 1)
+                    sprite_set_position(lineSprite,115,7);
+                if(isLineNum == 2)
+                    sprite_set_position(lineSprite,201,7);
+                if(isLineNum == 3)
+                    sprite_set_position(lineSprite,286,7);
+                break;
+            case HORIZONTAL:
+                lineSprite->rotate = ONE * 90;
+                lineSprite->scaley = ONE;
+
+                if(isLineNum == 1)
+                    sprite_set_position(lineSprite,320,37);
+                if(isLineNum == 2)
+                    sprite_set_position(lineSprite,320,120);
+                if(isLineNum == 3)
+                    sprite_set_position(lineSprite,320,203);
+                break;
+            case DIAGONAL:
+                lineSprite->scaley = ONE + ONE / 2;
+                if(isLineNum == 1) {
+                    lineSprite->rotate = ONE * -45;
+                    sprite_set_position(lineSprite,85,7);
+
+                }
+                if(isLineNum == 2) {
+                    lineSprite->rotate = ONE * 45;
+                    sprite_set_position(lineSprite,324,5);
+
+                }
+                break;
+        }
+        draw_sprite(lineSprite);
+    }
+
+}
 /*
  * Drawing score
  */
@@ -109,6 +155,20 @@ void updateTicTac() {
 
         }
     }
+    if(waitForClearField > 0) {
+        waitForClearField--;
+        if(waitForClearField == 0) {
+            clearField();
+        }
+    }
+    if(waitCpuPlacedFigure > 0) {
+        waitCpuPlacedFigure--;
+        if(waitCpuPlacedFigure == 0) {
+            addToRandomEmptyPlace();
+            checkWinCombination(currentFigureTicTac == CIRCLE ? CROSS : CIRCLE);
+        }
+
+    }
 
 
     if(isLockUpdate > 0) {
@@ -119,6 +179,7 @@ void updateTicTac() {
 }
 
 void clearField() {
+    isLineNum = 0;
     for (indexI = 0; indexI < SIZE_FIELD; ++indexI) {
         for (indexJ = 0; indexJ < SIZE_FIELD; ++indexJ) {
             fieldInfo[indexI][indexJ]=0;
@@ -132,17 +193,20 @@ void winGame(int typeFigure) {
     if(typeFigure == CIRCLE) {
         scoreCircle++;
     }
-    clearField();
+
+    // delay for field clear
+    waitForClearField = 60;
+    isLockUpdate = 60;
 
 }
 /*
  * Checked when win circles or crosses
  */
-void checkWinCombination() {
+void checkWinCombination(int figure) {
     // check lines vertical
     for (indexI = 0; indexI < SIZE_FIELD; ++indexI) {
         int checkedFigure = fieldInfo[indexI][0];
-        if(checkedFigure > 0) {
+        if(checkedFigure > 0 && checkedFigure == figure) {
             int isWin = 1;
             for (indexJ = 1; indexJ < SIZE_FIELD; ++indexJ) {
                 if(checkedFigure != fieldInfo[indexI][indexJ]) {
@@ -151,6 +215,8 @@ void checkWinCombination() {
                 }
             }
             if(isWin) {
+                lineType = VERTICAL;
+                isLineNum = indexI + 1;
                 winGame(checkedFigure);
             }
         }
@@ -158,7 +224,7 @@ void checkWinCombination() {
     // check lines horizontal
     for (indexI = 0; indexI < SIZE_FIELD; ++indexI) {
         int checkedFigure = fieldInfo[0][indexI];
-        if(checkedFigure > 0) {
+        if(checkedFigure > 0 && checkedFigure == figure) {
             int isWin = 1;
             for (indexJ = 1; indexJ < SIZE_FIELD; ++indexJ) {
                 if(checkedFigure != fieldInfo[indexJ][indexI]) {
@@ -167,6 +233,8 @@ void checkWinCombination() {
                 }
             }
             if(isWin) {
+                lineType = HORIZONTAL;
+                isLineNum = indexI + 1;
                 winGame(checkedFigure);
             }
         }
@@ -175,7 +243,7 @@ void checkWinCombination() {
 
     {
         int checkedFigure = fieldInfo[0][0];
-        if(checkedFigure > 0) {
+        if(checkedFigure > 0 && checkedFigure == figure) {
             int isWin = 1;
             for (indexJ = 1; indexJ < SIZE_FIELD; ++indexJ) {
                 if(checkedFigure != fieldInfo[indexJ][indexJ]) {
@@ -184,6 +252,8 @@ void checkWinCombination() {
                 }
             }
             if(isWin) {
+                lineType = DIAGONAL;
+                isLineNum = 1;
                 winGame(checkedFigure);
             }
         }
@@ -192,7 +262,7 @@ void checkWinCombination() {
     {
         int maxRight = SIZE_FIELD-1;
         int checkedFigure = fieldInfo[maxRight][0];
-        if(checkedFigure > 0) {
+        if(checkedFigure > 0 && checkedFigure == figure) {
             int isWin = 1;
             for (indexJ = 1; indexJ < SIZE_FIELD; ++indexJ) {
                 maxRight--;
@@ -203,6 +273,8 @@ void checkWinCombination() {
                 }
             }
             if(isWin) {
+                lineType = DIAGONAL;
+                isLineNum = 2;
                 winGame(checkedFigure);
             }
         }
@@ -218,14 +290,15 @@ void setField(int typeFigure) {
     }
     if(currentFigureTicTac == typeFigure && fieldInfo[Cursor.x][Cursor.y] == 0) {
         fieldInfo[Cursor.x][Cursor.y] = typeFigure;
-        addToRandomEmptyPlace();
-        checkWinCombination();
+        checkWinCombination(currentFigureTicTac);
+
+        isLockUpdate = 10;
+        waitCpuPlacedFigure = 10;
+
     }
 
 }
-/*
- * Count empty slots
- */
+
 void addToRandomEmptyPlace() {
     if(countEmptySlot() > 0) {
 
@@ -246,7 +319,9 @@ void addToRandomEmptyPlace() {
 
 
 }
-
+/*
+ * Count empty slots
+ */
 int countEmptySlot() {
     int count = 0;
     for (indexI = 0; indexI < 3; ++indexI) {

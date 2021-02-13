@@ -18,6 +18,9 @@ Sprite *lineSprite;
 u_long *dataTim[5];
 
 int indexI,indexJ;
+enum LineType {
+    HORIZONTAL,VERTICAL,DIAGONAL
+} lineType;
 struct Point {
     int x;
     int y;
@@ -32,8 +35,13 @@ int scoreCross;
 
 int fontCircleId;
 int fontCrossId;
+// main player figure
 int currentFigureTicTac;
+int isLineNum;
+int waitForClearField;
+int waitCpuPlacedFigure;
 
+void drawLine();
 void drawTicTac();
 void updateTicTac();
 void initTicTac();
@@ -41,7 +49,7 @@ void drawTicTacField();
 void drawScoreTicTac();
 void clearField();
 void winGame(int typeFigure);
-void checkWinCombination();
+void checkWinCombination(int figure);
 void setField(int typeFigure);
 int countEmptySlot();
 
