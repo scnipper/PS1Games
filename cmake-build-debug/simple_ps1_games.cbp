@@ -104,6 +104,12 @@
 		<Unit filename="C:/psyq/projects/simple_ps1_games/src/engine.h">
 			<Option target="simple_ps1_games"/>
 		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/games/tic_tac_screen.c">
+			<Option target="simple_ps1_games"/>
+		</Unit>
+		<Unit filename="C:/psyq/projects/simple_ps1_games/src/games/tic_tac_screen.h">
+			<Option target="simple_ps1_games"/>
+		</Unit>
 		<Unit filename="C:/psyq/projects/simple_ps1_games/src/games/tic_tac_toe_game.c">
 			<Option target="simple_ps1_games"/>
 		</Unit>

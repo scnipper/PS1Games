@@ -1,5 +1,6 @@
 #include "core.h"
 #include "controller.h"
+#include "games/tic_tac_screen.h"
 #include "games/tic_tac_toe_game.h"
 #include "screen_selector.h"
 
@@ -65,7 +66,7 @@ void updateLogo() {
             logoBlend = 0;
             free3(logoSprite);
             clear_vram();
-            setState(TIC_TAC);
+            setState(TIC_TAC_SCREEN);
         }
     }
 }
@@ -91,6 +92,9 @@ void update() {
         case TIC_TAC:
             updateTicTac();
             break;
+        case TIC_TAC_SCREEN:
+            updateTicTacScreen();
+            break;
     }
 
 
@@ -111,6 +115,9 @@ void draw() {
         case TIC_TAC:
             drawTicTac();
             break;
+        case TIC_TAC_SCREEN:
+            drawTicTacScreen();
+            break;
     }
 }
 
@@ -120,6 +127,7 @@ int main() {
     initFuncs[LOGO] = initLogo;
     initFuncs[SELECT_SCREEN] = initScreenSelector;
     initFuncs[TIC_TAC] = initTicTac;
+    initFuncs[TIC_TAC_SCREEN] = initTicTacScreen;
 
     initialize();
     while (1) {

@@ -5,6 +5,13 @@
 		<license file="LICENSEE.DAT"/>
 		<directory_tree>
 			<file name="SYSTEM.CNF"	type="data"	source="SYSTEM.CNF"/>
+			<file name="TIC_TAC_PL1"	type="data"	source="../data/TIC_TAC/SCREEN/TIC_TAC_1_P.TIM"/>
+			<file name="TIC_TAC_P1S"	type="data"	source="../data/TIC_TAC/SCREEN/TIC_TAC_1_PS.TIM"/>
+			<file name="TIC_TAC_PL2"	type="data"	source="../data/TIC_TAC/SCREEN/TIC_TAC_2_P.TIM"/>
+			<file name="TIC_TAC_P2S"	type="data"	source="../data/TIC_TAC/SCREEN/TIC_TAC_2_PS.TIM"/>
+			<file name="TIC_TAC_B1"	type="data"	source="../data/TIC_TAC/SCREEN/TIC_TAC_BACK_1.TIM"/>
+			<file name="TIC_TAC_B2"	type="data"	source="../data/TIC_TAC/SCREEN/TIC_TAC_BACK_2.TIM"/>
+			<file name="TIC_TAC_L"	type="data"	source="../data/TIC_TAC/SCREEN/TIC_TAC_LOGO.TIM"/>
 			<file name="SPLASH.TIM"	type="data"	source="../data/SPLASH.TIM"/>
 			<file name="FIELD.TIM"	type="data"	source="../data/TIC_TAC/FIELD.TIM"/>
 			<file name="CROSS.TIM"	type="data"	source="../data/TIC_TAC/CROSS.TIM"/>

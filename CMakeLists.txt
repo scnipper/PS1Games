@@ -9,6 +9,8 @@ include_directories(src/games)
 add_executable(simple_ps1_games
         src/games/tic_tac_toe_game.c
         src/games/tic_tac_toe_game.h
+        src/games/tic_tac_screen.c
+        src/games/tic_tac_screen.h
         src/controller.c
         src/controller.h
         src/core.c

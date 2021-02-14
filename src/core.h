@@ -6,8 +6,9 @@
 #define SIMPLE_PS1_GAMES_CORE_H
 #include "engine.h"
 
+int pause;
 enum State {
-    LOGO,SELECT_SCREEN,TIC_TAC,SNAKE
+    LOGO,SELECT_SCREEN,TIC_TAC,TIC_TAC_SCREEN
 } mainState;
 
 void (*initFuncs[4])(void);

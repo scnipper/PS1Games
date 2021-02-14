@@ -80,9 +80,28 @@ CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_toe_game.c.s: cmake_force
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\simple_ps1_games.dir\src\games\tic_tac_toe_game.c.s /c C:\psyq\projects\simple_ps1_games\src\games\tic_tac_toe_game.c
 <<
 
+CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.obj: CMakeFiles\simple_ps1_games.dir\flags.make
+CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.obj: ..\src\games\tic_tac_screen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/simple_ps1_games.dir/src/games/tic_tac_screen.c.obj"
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.obj /FdCMakeFiles\simple_ps1_games.dir\ /FS -c C:\psyq\projects\simple_ps1_games\src\games\tic_tac_screen.c
+<<
+
+CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/simple_ps1_games.dir/src/games/tic_tac_screen.c.i"
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe > CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\psyq\projects\simple_ps1_games\src\games\tic_tac_screen.c
+<<
+
+CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/simple_ps1_games.dir/src/games/tic_tac_screen.c.s"
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.s /c C:\psyq\projects\simple_ps1_games\src\games\tic_tac_screen.c
+<<
+
 CMakeFiles\simple_ps1_games.dir\src\controller.c.obj: CMakeFiles\simple_ps1_games.dir\flags.make
 CMakeFiles\simple_ps1_games.dir\src\controller.c.obj: ..\src\controller.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/simple_ps1_games.dir/src/controller.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/simple_ps1_games.dir/src/controller.c.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\simple_ps1_games.dir\src\controller.c.obj /FdCMakeFiles\simple_ps1_games.dir\ /FS -c C:\psyq\projects\simple_ps1_games\src\controller.c
 <<
@@ -101,7 +120,7 @@ CMakeFiles\simple_ps1_games.dir\src\controller.c.s: cmake_force
 
 CMakeFiles\simple_ps1_games.dir\src\core.c.obj: CMakeFiles\simple_ps1_games.dir\flags.make
 CMakeFiles\simple_ps1_games.dir\src\core.c.obj: ..\src\core.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/simple_ps1_games.dir/src/core.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/simple_ps1_games.dir/src/core.c.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\simple_ps1_games.dir\src\core.c.obj /FdCMakeFiles\simple_ps1_games.dir\ /FS -c C:\psyq\projects\simple_ps1_games\src\core.c
 <<
@@ -120,7 +139,7 @@ CMakeFiles\simple_ps1_games.dir\src\core.c.s: cmake_force
 
 CMakeFiles\simple_ps1_games.dir\src\engine.c.obj: CMakeFiles\simple_ps1_games.dir\flags.make
 CMakeFiles\simple_ps1_games.dir\src\engine.c.obj: ..\src\engine.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/simple_ps1_games.dir/src/engine.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/simple_ps1_games.dir/src/engine.c.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\simple_ps1_games.dir\src\engine.c.obj /FdCMakeFiles\simple_ps1_games.dir\ /FS -c C:\psyq\projects\simple_ps1_games\src\engine.c
 <<
@@ -139,7 +158,7 @@ CMakeFiles\simple_ps1_games.dir\src\engine.c.s: cmake_force
 
 CMakeFiles\simple_ps1_games.dir\src\main.c.obj: CMakeFiles\simple_ps1_games.dir\flags.make
 CMakeFiles\simple_ps1_games.dir\src\main.c.obj: ..\src\main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/simple_ps1_games.dir/src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/simple_ps1_games.dir/src/main.c.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\simple_ps1_games.dir\src\main.c.obj /FdCMakeFiles\simple_ps1_games.dir\ /FS -c C:\psyq\projects\simple_ps1_games\src\main.c
 <<
@@ -158,7 +177,7 @@ CMakeFiles\simple_ps1_games.dir\src\main.c.s: cmake_force
 
 CMakeFiles\simple_ps1_games.dir\src\screen_selector.c.obj: CMakeFiles\simple_ps1_games.dir\flags.make
 CMakeFiles\simple_ps1_games.dir\src\screen_selector.c.obj: ..\src\screen_selector.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/simple_ps1_games.dir/src/screen_selector.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/simple_ps1_games.dir/src/screen_selector.c.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\simple_ps1_games.dir\src\screen_selector.c.obj /FdCMakeFiles\simple_ps1_games.dir\ /FS -c C:\psyq\projects\simple_ps1_games\src\screen_selector.c
 <<
@@ -178,6 +197,7 @@ CMakeFiles\simple_ps1_games.dir\src\screen_selector.c.s: cmake_force
 # Object files for target simple_ps1_games
 simple_ps1_games_OBJECTS = \
 "CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_toe_game.c.obj" \
+"CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.obj" \
 "CMakeFiles\simple_ps1_games.dir\src\controller.c.obj" \
 "CMakeFiles\simple_ps1_games.dir\src\core.c.obj" \
 "CMakeFiles\simple_ps1_games.dir\src\engine.c.obj" \
@@ -188,6 +208,7 @@ simple_ps1_games_OBJECTS = \
 simple_ps1_games_EXTERNAL_OBJECTS =
 
 simple_ps1_games.exe: CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_toe_game.c.obj
+simple_ps1_games.exe: CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.obj
 simple_ps1_games.exe: CMakeFiles\simple_ps1_games.dir\src\controller.c.obj
 simple_ps1_games.exe: CMakeFiles\simple_ps1_games.dir\src\core.c.obj
 simple_ps1_games.exe: CMakeFiles\simple_ps1_games.dir\src\engine.c.obj
@@ -195,7 +216,7 @@ simple_ps1_games.exe: CMakeFiles\simple_ps1_games.dir\src\main.c.obj
 simple_ps1_games.exe: CMakeFiles\simple_ps1_games.dir\src\screen_selector.c.obj
 simple_ps1_games.exe: CMakeFiles\simple_ps1_games.dir\build.make
 simple_ps1_games.exe: CMakeFiles\simple_ps1_games.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable simple_ps1_games.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable simple_ps1_games.exe"
 	"D:\Programs\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\simple_ps1_games.dir --rc=C:\PROGRA~2\WINDOW~1\10\bin\100171~1.0\x86\rc.exe --mt=C:\PROGRA~2\WINDOW~1\10\bin\100171~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\simple_ps1_games.dir\objects1.rsp @<<
  /out:simple_ps1_games.exe /implib:simple_ps1_games.lib /pdb:C:\psyq\projects\simple_ps1_games\cmake-build-debug\simple_ps1_games.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

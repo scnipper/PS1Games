@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/psyq/projects/simple_ps1_games/src/controller.c" "C:/psyq/projects/simple_ps1_games/cmake-build-debug/CMakeFiles/simple_ps1_games.dir/src/controller.c.obj"
   "C:/psyq/projects/simple_ps1_games/src/core.c" "C:/psyq/projects/simple_ps1_games/cmake-build-debug/CMakeFiles/simple_ps1_games.dir/src/core.c.obj"
   "C:/psyq/projects/simple_ps1_games/src/engine.c" "C:/psyq/projects/simple_ps1_games/cmake-build-debug/CMakeFiles/simple_ps1_games.dir/src/engine.c.obj"
+  "C:/psyq/projects/simple_ps1_games/src/games/tic_tac_screen.c" "C:/psyq/projects/simple_ps1_games/cmake-build-debug/CMakeFiles/simple_ps1_games.dir/src/games/tic_tac_screen.c.obj"
   "C:/psyq/projects/simple_ps1_games/src/games/tic_tac_toe_game.c" "C:/psyq/projects/simple_ps1_games/cmake-build-debug/CMakeFiles/simple_ps1_games.dir/src/games/tic_tac_toe_game.c.obj"
   "C:/psyq/projects/simple_ps1_games/src/main.c" "C:/psyq/projects/simple_ps1_games/cmake-build-debug/CMakeFiles/simple_ps1_games.dir/src/main.c.obj"
   "C:/psyq/projects/simple_ps1_games/src/screen_selector.c" "C:/psyq/projects/simple_ps1_games/cmake-build-debug/CMakeFiles/simple_ps1_games.dir/src/screen_selector.c.obj"

@@ -1,0 +1,3 @@
+cell size 8x8
+field size 35x29 cells
+field start position 36 4

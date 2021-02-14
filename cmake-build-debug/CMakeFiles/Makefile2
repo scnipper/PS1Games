@@ -78,12 +78,12 @@ clean: CMakeFiles\simple_ps1_games.dir\clean
 CMakeFiles\simple_ps1_games.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\simple_ps1_games.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\simple_ps1_games.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\simple_ps1_games.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\simple_ps1_games.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target simple_ps1_games"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target simple_ps1_games"
 .PHONY : CMakeFiles\simple_ps1_games.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\simple_ps1_games.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\simple_ps1_games.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\psyq\projects\simple_ps1_games\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles\simple_ps1_games.dir\rule

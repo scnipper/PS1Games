@@ -208,6 +208,33 @@ src\engine.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\simple_ps1_games.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\simple_ps1_games.dir\src\engine.c.s
 .PHONY : src\engine.c.s
 
+src\games\tic_tac_screen.obj: src\games\tic_tac_screen.c.obj
+
+.PHONY : src\games\tic_tac_screen.obj
+
+# target to build an object file
+src\games\tic_tac_screen.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\simple_ps1_games.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.obj
+.PHONY : src\games\tic_tac_screen.c.obj
+
+src\games\tic_tac_screen.i: src\games\tic_tac_screen.c.i
+
+.PHONY : src\games\tic_tac_screen.i
+
+# target to preprocess a source file
+src\games\tic_tac_screen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\simple_ps1_games.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.i
+.PHONY : src\games\tic_tac_screen.c.i
+
+src\games\tic_tac_screen.s: src\games\tic_tac_screen.c.s
+
+.PHONY : src\games\tic_tac_screen.s
+
+# target to generate assembly for a file
+src\games\tic_tac_screen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\simple_ps1_games.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\simple_ps1_games.dir\src\games\tic_tac_screen.c.s
+.PHONY : src\games\tic_tac_screen.c.s
+
 src\games\tic_tac_toe_game.obj: src\games\tic_tac_toe_game.c.obj
 
 .PHONY : src\games\tic_tac_toe_game.obj
@@ -307,6 +334,9 @@ help:
 	@echo ... src/engine.obj
 	@echo ... src/engine.i
 	@echo ... src/engine.s
+	@echo ... src/games/tic_tac_screen.obj
+	@echo ... src/games/tic_tac_screen.i
+	@echo ... src/games/tic_tac_screen.s
 	@echo ... src/games/tic_tac_toe_game.obj
 	@echo ... src/games/tic_tac_toe_game.i
 	@echo ... src/games/tic_tac_toe_game.s
