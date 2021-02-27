@@ -18,6 +18,14 @@
 			<file name="CIRCLE.TIM"	type="data"	source="../data/TIC_TAC/CIRCLE.TIM"/>
 			<file name="LINE.TIM"	type="data"	source="../data/TIC_TAC/LINE.TIM"/>
 			<file name="SELECTED.TIM"	type="data"	source="../data/TIC_TAC/SELECTED.TIM"/>
+			<file name="MA_BA_1"	type="data"	source="../data/MAIN_SCREEN/BACK_1.TIM"/>
+			<file name="MA_BA_2"	type="data"	source="../data/MAIN_SCREEN/BACK_2.TIM"/>
+			<file name="MA_LOGO"	type="data"	source="../data/MAIN_SCREEN/LOGO_GAME_SEL.TIM"/>
+			<file name="MA_NEXT_TR"	type="data"	source="../data/MAIN_SCREEN/NEXT_TRACK.TIM"/>
+			<file name="MA_PREV_TR"	type="data"	source="../data/MAIN_SCREEN/PREV_TRACK.TIM"/>
+			<file name="MA_SEL_ARR"	type="data"	source="../data/MAIN_SCREEN/SELECT_ARROW.TIM"/>
+			<file name="MA_SANKE"	type="data"	source="../data/MAIN_SCREEN/SNAKE.TIM"/>
+			<file name="MA_TIC"	type="data"	source="../data/MAIN_SCREEN/TIC_TAC_TOE.TIM"/>
 			<file name="MAIN.EXE"	type="data"	source="MAIN.EXE"/>
 			<!-- Add your own files or folders here -->
 			<dummy sectors="1024"/>

@@ -18,5 +18,5 @@ add_executable(simple_ps1_games
         src/engine.c
         src/engine.h
         src/main.c
-        src/screen_selector.c
-        src/screen_selector.h)
+        src/start_screen/screen_selector.c
+        src/start_screen/screen_selector.h)

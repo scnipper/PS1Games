@@ -2,7 +2,7 @@
 #include "controller.h"
 #include "games/tic_tac_screen.h"
 #include "games/tic_tac_toe_game.h"
-#include "screen_selector.h"
+#include "start_screen/screen_selector.h"
 
 
 Color *color;
@@ -66,7 +66,7 @@ void updateLogo() {
             logoBlend = 0;
             free3(logoSprite);
             clear_vram();
-            setState(TIC_TAC_SCREEN);
+            setState(SELECT_SCREEN);
         }
     }
 }

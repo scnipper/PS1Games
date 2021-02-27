@@ -6,8 +6,8 @@
 #define SIMPLE_PS1_GAMES_CORE_H
 #include "engine.h"
 
-Sprite *spritesPool[7];
-u_long *dataPool[7];
+Sprite *spritesPool[8];
+u_long *dataPool[8];
 
 
 int pause;
