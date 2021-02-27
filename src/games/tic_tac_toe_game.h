@@ -16,6 +16,9 @@
 #define CIRCLE_SPRITE 3
 #define LINE_SPRITE 4
 
+// 1 - vs cpu, 2 - vs player
+int gameType;
+int playerMove;
 
 int indexI,indexJ;
 enum LineType {

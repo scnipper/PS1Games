@@ -1,9 +1,8 @@
 #ifndef SIMPLE_PS1_GAMES_TIC_TAC_SCREEN_H
 #define SIMPLE_PS1_GAMES_TIC_TAC_SCREEN_H
 
-#include "../engine.h"
-#include "../controller.h"
-#include "../core.h"
+#include "tic_tac_toe_game.h"
+
 
 #define PL1_SPRITE 0
 #define PL2_SPRITE 1

@@ -28,28 +28,11 @@ void updateTicTacScreen(){
         curSelectedMenu++;
         if(curSelectedMenu > 2) curSelectedMenu = 2;
     }
-    if (pad_check(Pad1Cross) && waitStartTicTac == 0) {
-        printf("load tictac\n");
-       // pause = 1;
-
+    if (pad_check(Pad1Cross)) {
         clear_vram();
         freeSprites();
-        //while(DrawSync(1));
-
-       // initialize_heap();
-
+        gameType = curSelectedMenu;
         setState(TIC_TAC);
-
-        //waitStartTicTac = 100;
-    }
-    if(waitStartTicTac > 0) {
-        waitStartTicTac--;
-        printf("wait %d \n",waitStartTicTac);
-        if(waitStartTicTac == 0) {
-            setState(TIC_TAC);
-
-            pause = 0;
-        }
     }
 }
 void initTicTacScreen(){

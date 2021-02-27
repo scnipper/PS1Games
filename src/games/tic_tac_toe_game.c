@@ -113,14 +113,14 @@ void drawTicTacField() {
 void updateTicTac() {
     if(!isLockUpdate) {
         pad_update();
-        if(pad_check(Pad1Right)) {
+        if(pad_check(playerMove > 0 ? Pad2Right : Pad1Right)) {
             isLockUpdate = 10;
             Cursor.x++;
             if(Cursor.x >=3) {
                 Cursor.x = 2;
             }
         }
-        if(pad_check(Pad1Left)) {
+        if(pad_check(playerMove > 0 ? Pad2Left : Pad1Left)) {
             isLockUpdate = 10;
             Cursor.x--;
             if(Cursor.x < 0) {
@@ -128,14 +128,14 @@ void updateTicTac() {
             }
         }
 
-        if(pad_check(Pad1Down)) {
+        if(pad_check(playerMove > 0 ? Pad2Down : Pad1Down)) {
             isLockUpdate = 10;
             Cursor.y++;
             if(Cursor.y >=3) {
                 Cursor.y = 2;
             }
         }
-        if(pad_check(Pad1Up)) {
+        if(pad_check(playerMove > 0 ? Pad2Up : Pad1Up)) {
             isLockUpdate = 10;
             Cursor.y--;
             if(Cursor.y < 0) {
@@ -143,17 +143,26 @@ void updateTicTac() {
             }
         }
 
-        if(pad_check(Pad1Cross)) {
-            isLockUpdate = 10;
-
-            setField(CROSS);
-
+        if(gameType == 1 || currentFigureTicTac == -1) {
+            if(pad_check(Pad1Cross)) {
+                isLockUpdate = 10;
+                setField(CROSS);
+            }
+            if(pad_check(Pad1Circle)) {
+                isLockUpdate = 10;
+                setField(CIRCLE);
+            }
+        } else {
+            if(pad_check(playerMove > 0 ? Pad2Cross : Pad1Cross)) {
+                isLockUpdate = 10;
+                setField(CROSS);
+            }
+            if(pad_check(playerMove > 0 ? Pad2Circle : Pad1Circle)) {
+                isLockUpdate = 10;
+                setField(CIRCLE);
+            }
         }
-        if(pad_check(Pad1Circle)) {
-            isLockUpdate = 10;
-            setField(CIRCLE);
 
-        }
     }
     if(waitForClearField > 0) {
         waitForClearField--;
@@ -197,7 +206,7 @@ void winGame(int typeFigure) {
     // delay for field clear
     waitForClearField = 60;
     isLockUpdate = 60;
-
+    currentFigureTicTac = -1;
 }
 /*
  * Checked when win circles or crosses
@@ -293,7 +302,19 @@ void setField(int typeFigure) {
         checkWinCombination(currentFigureTicTac);
 
         isLockUpdate = 10;
-        waitCpuPlacedFigure = 10;
+        if(gameType == 1) {
+            waitCpuPlacedFigure = 10;
+        } else {
+            if(currentFigureTicTac == CIRCLE) {
+                currentFigureTicTac = CROSS;
+            } else if(currentFigureTicTac == CROSS) {
+                currentFigureTicTac = CIRCLE;
+            }
+
+            if(playerMove == 0) playerMove = 1;
+            else if(playerMove == 1) playerMove = 0;
+            printf("player move: %d\n",playerMove);
+        }
 
     }
 
@@ -340,6 +361,7 @@ void initTicTac() {
     color_create(0, 140, 255, &bg);
     set_background_color(bg);
 
+    playerMove = 0;
 
     currentFigureTicTac = -1;
 
