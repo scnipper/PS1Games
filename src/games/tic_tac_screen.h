@@ -5,17 +5,14 @@
 #include "../controller.h"
 #include "../core.h"
 
-u_long *dataTimScreen[7];
+#define PL1_SPRITE 0
+#define PL2_SPRITE 1
+#define PL1_SEL_SPRITE 2
+#define PL2_SEL_SPRITE 3
+#define BACK_SPRITE_1 4
+#define BACK_SPRITE_2 5
+#define LOGO_TIC_SPRITE 6
 
-GsSPRITE *pl1Sprite;
-GsSPRITE *pl1SelectedSprite;
-GsSPRITE *pl2Sprite;
-GsSPRITE *pl2SelectedSprite;
-GsSPRITE *backSprite1;
-GsSPRITE *backSprite2;
-GsSPRITE *logoTicSprite;
-
-Sprite *sprites[7];
 
 int curSelectedMenu;
 int isLockUpdate;

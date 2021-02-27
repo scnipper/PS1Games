@@ -4,10 +4,10 @@
 void drawTicTac() {
 
     drawLine();
-    draw_sprite(selectedSprite);
+    draw_sprite(spritesPool[SELECTED_SPRITE]);
 
 
-    draw_sprite(fieldSprite);
+    draw_sprite(spritesPool[FIELD_SPRITE]);
     drawTicTacField();
     drawScoreTicTac();
 
@@ -20,42 +20,42 @@ void drawLine() {
         switch (lineType) {
 
             case VERTICAL:
-                lineSprite->rotate = 0;
-                lineSprite->scaley = ONE;
+                spritesPool[LINE_SPRITE]->rotate = 0;
+                spritesPool[LINE_SPRITE]->scaley = ONE;
 
                 if(isLineNum == 1)
-                    sprite_set_position(lineSprite,115,7);
+                    sprite_set_position(spritesPool[LINE_SPRITE],115,7);
                 if(isLineNum == 2)
-                    sprite_set_position(lineSprite,201,7);
+                    sprite_set_position(spritesPool[LINE_SPRITE],201,7);
                 if(isLineNum == 3)
-                    sprite_set_position(lineSprite,286,7);
+                    sprite_set_position(spritesPool[LINE_SPRITE],286,7);
                 break;
             case HORIZONTAL:
-                lineSprite->rotate = ONE * 90;
-                lineSprite->scaley = ONE;
+                spritesPool[LINE_SPRITE]->rotate = ONE * 90;
+                spritesPool[LINE_SPRITE]->scaley = ONE;
 
                 if(isLineNum == 1)
-                    sprite_set_position(lineSprite,320,37);
+                    sprite_set_position(spritesPool[LINE_SPRITE],320,37);
                 if(isLineNum == 2)
-                    sprite_set_position(lineSprite,320,120);
+                    sprite_set_position(spritesPool[LINE_SPRITE],320,120);
                 if(isLineNum == 3)
-                    sprite_set_position(lineSprite,320,203);
+                    sprite_set_position(spritesPool[LINE_SPRITE],320,203);
                 break;
             case DIAGONAL:
-                lineSprite->scaley = ONE + ONE / 2;
+                spritesPool[LINE_SPRITE]->scaley = ONE + ONE / 2;
                 if(isLineNum == 1) {
-                    lineSprite->rotate = ONE * -45;
-                    sprite_set_position(lineSprite,85,7);
+                    spritesPool[LINE_SPRITE]->rotate = ONE * -45;
+                    sprite_set_position(spritesPool[LINE_SPRITE],85,7);
 
                 }
                 if(isLineNum == 2) {
-                    lineSprite->rotate = ONE * 45;
-                    sprite_set_position(lineSprite,324,5);
+                    spritesPool[LINE_SPRITE]->rotate = ONE * 45;
+                    sprite_set_position(spritesPool[LINE_SPRITE],324,5);
 
                 }
                 break;
         }
-        draw_sprite(lineSprite);
+        draw_sprite(spritesPool[LINE_SPRITE]);
     }
 
 }
@@ -64,20 +64,20 @@ void drawLine() {
  */
 void drawScoreTicTac() {
 
-    sprite_set_position(crossSprite,14,50);
-    crossSprite->scalex = ONE / 2;
-    crossSprite->scaley = ONE / 2;
-    draw_sprite(crossSprite);
-    crossSprite->scalex = ONE;
-    crossSprite->scaley = ONE;
+    sprite_set_position(spritesPool[CROSS_SPRITE],14,50);
+    spritesPool[CROSS_SPRITE]->scalex = ONE / 2;
+    spritesPool[CROSS_SPRITE]->scaley = ONE / 2;
+    draw_sprite(spritesPool[CROSS_SPRITE]);
+    spritesPool[CROSS_SPRITE]->scalex = ONE;
+    spritesPool[CROSS_SPRITE]->scaley = ONE;
 
 
-    sprite_set_position(circleSprite,14,170);
-    circleSprite->scalex = ONE / 2;
-    circleSprite->scaley = ONE / 2;
-    draw_sprite(circleSprite);
-    circleSprite->scalex = ONE;
-    circleSprite->scaley = ONE;
+    sprite_set_position(spritesPool[CIRCLE_SPRITE],14,170);
+    spritesPool[CIRCLE_SPRITE]->scalex = ONE / 2;
+    spritesPool[CIRCLE_SPRITE]->scaley = ONE / 2;
+    draw_sprite(spritesPool[CIRCLE_SPRITE]);
+    spritesPool[CIRCLE_SPRITE]->scalex = ONE;
+    spritesPool[CIRCLE_SPRITE]->scaley = ONE;
 
     FntPrint(fontCrossId,"%d",scoreCross);
     FntFlush(fontCrossId);
@@ -97,13 +97,13 @@ void drawTicTacField() {
         for (indexJ = 0; indexJ < 3; ++indexJ) {
             struct Point p = pos[indexI][indexJ];
             if(fieldInfo[indexI][indexJ] == CROSS) {
-                sprite_set_position(crossSprite,p.x,p.y);
+                sprite_set_position(spritesPool[CROSS_SPRITE],p.x,p.y);
 
-                draw_sprite(crossSprite);
+                draw_sprite(spritesPool[CROSS_SPRITE]);
             } else if(fieldInfo[indexI][indexJ] == CIRCLE) {
-                sprite_set_position(circleSprite,p.x,p.y);
+                sprite_set_position(spritesPool[CIRCLE_SPRITE],p.x,p.y);
 
-                draw_sprite(circleSprite);
+                draw_sprite(spritesPool[CIRCLE_SPRITE]);
             }
         }
     }
@@ -175,7 +175,7 @@ void updateTicTac() {
         isLockUpdate--;
     }
 
-    sprite_set_position(selectedSprite,85 + Cursor.x * 85,7 + Cursor.y *85);
+    sprite_set_position(spritesPool[SELECTED_SPRITE],85 + Cursor.x * 85,7 + Cursor.y *85);
 }
 
 void clearField() {
@@ -358,21 +358,21 @@ void initTicTac() {
 
     cd_open();
 
-    cd_read_file("FIELD.TIM", &dataTim[0]);
-    cd_read_file("SELECTED.TIM", &dataTim[1]);
-    cd_read_file("CROSS.TIM", &dataTim[2]);
-    cd_read_file("CIRCLE.TIM", &dataTim[3]);
-    cd_read_file("LINE.TIM", &dataTim[4]);
+    cd_read_file("FIELD.TIM", &dataPool[FIELD_SPRITE]);
+    cd_read_file("SELECTED.TIM", &dataPool[SELECTED_SPRITE]);
+    cd_read_file("CROSS.TIM", &dataPool[CROSS_SPRITE]);
+    cd_read_file("CIRCLE.TIM", &dataPool[CIRCLE_SPRITE]);
+    cd_read_file("LINE.TIM", &dataPool[LINE_SPRITE]);
     cd_close();
 
-    sprite_create((u_char *) dataTim[0], 80, 0, &fieldSprite);
-    sprite_create((u_char *) dataTim[1], 85, 7, &selectedSprite);
-    sprite_create((u_char *) dataTim[2], 85, 7, &crossSprite);
-    sprite_create((u_char *) dataTim[3], 85, 7, &circleSprite);
-    sprite_create((u_char *) dataTim[4], 85, 7, &lineSprite);
+    sprite_create((u_char *) dataPool[FIELD_SPRITE], 80, 0, &spritesPool[FIELD_SPRITE]);
+    sprite_create((u_char *) dataPool[SELECTED_SPRITE], 85, 7, &spritesPool[SELECTED_SPRITE]);
+    sprite_create((u_char *) dataPool[CROSS_SPRITE], 85, 7, &spritesPool[CROSS_SPRITE]);
+    sprite_create((u_char *) dataPool[CIRCLE_SPRITE], 85, 7, &spritesPool[CIRCLE_SPRITE]);
+    sprite_create((u_char *) dataPool[LINE_SPRITE], 85, 7, &spritesPool[LINE_SPRITE]);
 
     for (indexI = 0; indexI < 5; ++indexI) {
-        free3(dataTim[indexI]);
+        free3(dataPool[indexI]);
     }
 
 }

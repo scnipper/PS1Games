@@ -6,6 +6,10 @@
 #define SIMPLE_PS1_GAMES_CORE_H
 #include "engine.h"
 
+Sprite *spritesPool[7];
+u_long *dataPool[7];
+
+
 int pause;
 enum State {
     LOGO,SELECT_SCREEN,TIC_TAC,TIC_TAC_SCREEN

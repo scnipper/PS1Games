@@ -3,19 +3,19 @@
 #define SIMPLE_PS1_GAMES_TIC_TAC_TOE_GAME_H
 #include "../engine.h"
 #include "../controller.h"
+#include "../core.h"
 #include <rand.h>
 
 #define CROSS 1
 #define CIRCLE 2
 #define SIZE_FIELD 3
 
+#define FIELD_SPRITE 0
+#define SELECTED_SPRITE 1
+#define CROSS_SPRITE 2
+#define CIRCLE_SPRITE 3
+#define LINE_SPRITE 4
 
-Sprite *fieldSprite;
-Sprite *selectedSprite;
-Sprite *crossSprite;
-Sprite *circleSprite;
-Sprite *lineSprite;
-u_long *dataTim[5];
 
 int indexI,indexJ;
 enum LineType {

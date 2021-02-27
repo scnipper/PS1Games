@@ -33,7 +33,7 @@ void initLogo() {
     sprite_set_middle(logoSprite, 63, 40);
 
 
-    // free3(data[0]);
+    free3(data[0]);
 }
 
 

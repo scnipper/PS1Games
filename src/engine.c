@@ -52,6 +52,7 @@ void cd_read_file(unsigned char* file_path, u_long** file) {
         printf("...sectors needed: %d\n", (*sectors_size + SECTOR - 1) / SECTOR);
         *file = malloc3(*sectors_size + SECTOR);
 
+
         DsRead(&temp_file_info->pos, (*sectors_size + SECTOR - 1) / SECTOR, *file, DslModeSpeed);
         while(DsReadSync(NULL));
         printf("...file loaded!\n");
@@ -140,15 +141,15 @@ void sprite_create(unsigned char imageData[], int x, int y, GsSPRITE **sprite) {
     rect->w = tim_data->pw; // width in frame buffer
     rect->h = tim_data->ph; // height in frame buffer
     printf("Framebuffer info {x=%d, y=%d, w=%d, h=%d}\n", rect->x, rect->y, rect->w, rect->h);
-    LoadImage(rect, tim_data->pixel);
+    LoadImage2(rect, tim_data->pixel);
 
     // Load the color lookup table (CLUT) into the GPU memory (frame buffer)
-    crect->x = tim_data->cx; // x position of CLUT in frame buffer
-    crect->y = tim_data->cy; // y position of CLUT in frame buffer
-    crect->w = tim_data->cw; // width of CLUT in frame buffer
-    crect->h = tim_data->ch; // height of CLUT in frame buffer
-    printf("CLUT info {x=%d, y=%d, w=%d, h=%d}\n", crect->x, crect->y, crect->w, crect->h);
-    LoadImage(crect, tim_data->clut);
+    //crect->x = tim_data->cx; // x position of CLUT in frame buffer
+    //crect->y = tim_data->cy; // y position of CLUT in frame buffer
+    //crect->w = tim_data->cw; // width of CLUT in frame buffer
+    //crect->h = tim_data->ch; // height of CLUT in frame buffer
+    //printf("CLUT info {x=%d, y=%d, w=%d, h=%d}\n", crect->x, crect->y, crect->w, crect->h);
+    //LoadImage2(crect, tim_data->clut);
 
     // Initialize sprite (see GSSprite at PSYQ/DOCS/LIBREF.PDF)
     *sprite = malloc3(sizeof(GsSPRITE));
@@ -312,9 +313,27 @@ void set_background_color(Color *color) {
     systemBackgroundColor = color;
 }
 
+extern unsigned long _bss_objend;
+
+void InitH()
+{
+    u_long stack = 0x801FFFF0; // default stack for this PS-EXE (as defined in SYSTEM.CNF)
+    u_long _stacksize = 0x10000; // 64 KB (make this smaller for simple programs)
+    u_long addr1, addr2;
+
+    addr1 = (stack - _stacksize);
+    printf("addr1 = %X\n", (int)addr1);
+    addr2 = (addr1 - (int)&_bss_objend);
+    printf("addr2 = %X\n", (int)addr2);
+
+    printf("\nUsing the end BSS address %X for InitHeap3\n", (int)&_bss_objend);
+    printf("Reserving %d bytes for InitHeap3...", (int)addr2);
+
+    InitHeap3(&_bss_objend, addr2);
+}
 void initialize_heap() {
     printf("\nReserving 1024KB (1,048,576 Bytes) RAM... \n");
-    InitHeap3((void*)0x800F8000, 0x00200000);
+    InitHeap3((void*)0x800F8000, 0x00100000);
     printf("Success!\n");
 }
 
