@@ -1,6 +1,8 @@
 #ifndef SIMPLE_PS1_GAMES_SCREEN_SELECTOR_H
 #define SIMPLE_PS1_GAMES_SCREEN_SELECTOR_H
 #include "../core.h"
+#include "../controller.h"
+
 
 
 #define MAIN_BACK_1     0
@@ -14,7 +16,14 @@
 Color* selectedScreenBg;
 
 int indexFor;
+int arrowPosX;
+int toMoveArrowX;
+int tick_m;
+int currentGameSelect;
 
+void freeSpritesGameScreen();
+void movingArrowByX();
+void updateInput();
 void initScreenSelector();
 
 void drawScreenSelector();
